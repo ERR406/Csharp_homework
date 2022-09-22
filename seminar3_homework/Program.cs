@@ -9,13 +9,13 @@
 // Console.Write("Введите число: ");
 // int number = Convert.ToInt32(Console.ReadLine());
 // int numbersave = number;
-// int rebnum = 0;
+// int rebmun = 0;
 // while (number > 0)
 // {
-//     rebnum = rebnum * 10 + number % 10;
+//     rebmun = rebmun * 10 + number % 10;
 //     number = number / 10;
 // }
-// if (numbersave == rebnum) Console.WriteLine($"Число {numbersave} - палиндром");
+// if (numbersave == rebmun) Console.WriteLine($"Число {numbersave} - палиндром");
 // else Console.WriteLine($"Число {numbersave} - не палиндром");
 
 
