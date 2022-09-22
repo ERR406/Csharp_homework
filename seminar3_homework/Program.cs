@@ -36,11 +36,13 @@
 // double[] point1 = {PromptAndInput("X1"), PromptAndInput("Y1"), PromptAndInput("Z1")};
 // double[] point2 = {PromptAndInput("X2"), PromptAndInput("Y2"), PromptAndInput("Z2")};
 // Console.WriteLine("Расстояние: " +
-//     Math.Sqrt(
-//         Math.Pow(point1[0]-point2[0],2)+
-//         Math.Pow(point1[1]-point2[1],2)+
-//         Math.Pow(point1[2]-point2[2],2)
-//     )
+//     Math.Round(
+//         Math.Sqrt(
+//             Math.Pow(point1[0]-point2[0],2)+
+//             Math.Pow(point1[1]-point2[1],2)+
+//             Math.Pow(point1[2]-point2[2],2)
+//         )
+//     , 2)
 // );
 
 
