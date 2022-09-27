@@ -1,22 +1,22 @@
-﻿// // Задача 19
-// // Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-// // 14212 -> нет
-// // 12821 -> да
-// // 23432 -> да
-// // 
-// // РВК: Общее решение.
-// Console.Clear();
-// Console.Write("Введите число: ");
-// int number = Convert.ToInt32(Console.ReadLine());
-// int numbersave = number;
-// int rebmun = 0;
-// while (number > 0)
-// {
-//     rebmun = rebmun * 10 + number % 10;
-//     number = number / 10;
-// }
-// if (numbersave == rebmun) Console.WriteLine($"Число {numbersave} - палиндром");
-// else Console.WriteLine($"Число {numbersave} - не палиндром");
+﻿// Задача 19
+// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// 14212 -> нет
+// 12821 -> да
+// 23432 -> да
+// 
+// РВК: Общее решение.
+Console.Clear();
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int numbertemp = number;
+int rebmun = 0;
+while (numbertemp > 0)
+{
+    rebmun = rebmun * 10 + numbertemp % 10;
+    numbertemp = numbertemp / 10;
+}
+if (number == rebmun) Console.WriteLine($"Число {number} - палиндром");
+else Console.WriteLine($"Число {number} - не палиндром");
 
 
 
