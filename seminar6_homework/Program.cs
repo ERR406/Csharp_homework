@@ -24,19 +24,18 @@ input2 = Console.ReadLine() ?? "0";
 int index = 0;
 while (index < input2.Length)
 {
-    if ((input2[index] >= Convert.ToChar("0") && input2[index] <= Convert.ToChar("9")) ||
-        (input2[index] == Convert.ToChar("-") && strNumber.Length == 0))
+    if (input2[index] != Convert.ToChar(" "))
     {
         strNumber += input2[index];
     }
-    else if (strNumber.Length > 0)
+    else
     {
-        if (strNumber != "-" && Convert.ToInt32(strNumber) > 0) countPosNum2++;
+        if (Convert.ToInt32(strNumber) > 0) countPosNum2++;
         strNumber = string.Empty;
     }
     index++;
 }
-if (strNumber != "-" && Convert.ToInt32(strNumber) > 0) countPosNum2++;
+if (Convert.ToInt32(strNumber) > 0) countPosNum2++;
 Console.WriteLine("Введено чисел больше нуля: " + countPosNum2);
 Console.WriteLine();
 
@@ -50,11 +49,10 @@ Console.Write("Введите k1: "); double k1 = Convert.ToDouble(Console.ReadL
 Console.Write("Введите b1: "); double b1 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите k2: "); double k2 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите b2: "); double b2 = Convert.ToDouble(Console.ReadLine());
-if (k1 == k2 && b1 == b2)
-    Console.WriteLine("Прямые совпадают");
-else if (k1 / k2 == b1 / b2)
+if (k1 == k2)
 {
-    Console.WriteLine("Прямые не пересекаются");
+    if (b1 == b2) Console.WriteLine("Прямые совпадают");
+    else Console.WriteLine("Прямые не пересекаются");
 }
 else
 {
