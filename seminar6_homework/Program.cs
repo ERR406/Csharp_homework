@@ -10,7 +10,7 @@ int countPosNum = 0;
 Console.WriteLine("Вводите через Enter");
 for (int i = 0; i < m; i++)
 {
-    if (Convert.ToInt32(Console.ReadLine())>0) countPosNum++;
+    if (Convert.ToInt32(Console.ReadLine()) > 0) countPosNum++;
 }
 Console.WriteLine("Введено чисел больше нуля: " + countPosNum);
 Console.WriteLine();
@@ -20,22 +20,23 @@ int countPosNum2 = 0;
 string input2 = string.Empty;
 string strNumber = string.Empty;
 Console.WriteLine("Введите через пробелы все необходимые числа");
-input2 = Console.ReadLine();
+input2 = Console.ReadLine() ?? "0";
 int index = 0;
 while (index < input2.Length)
 {
-    if (input2[index] != Convert.ToChar(" "))
+    if ((input2[index] >= Convert.ToChar("0") && input2[index] <= Convert.ToChar("9")) ||
+        (input2[index] == Convert.ToChar("-") && strNumber.Length == 0))
     {
-        strNumber += input2[index];        
+        strNumber += input2[index];
     }
-    else
+    else if (strNumber.Length > 0)
     {
-        if (Convert.ToInt32(strNumber) > 0) countPosNum2++;
+        if (strNumber != "-" && Convert.ToInt32(strNumber) > 0) countPosNum2++;
         strNumber = string.Empty;
-    } 
+    }
     index++;
 }
-if (Convert.ToInt32(strNumber) > 0) countPosNum2++;
+if (strNumber != "-" && Convert.ToInt32(strNumber) > 0) countPosNum2++;
 Console.WriteLine("Введено чисел больше нуля: " + countPosNum2);
 Console.WriteLine();
 
@@ -49,6 +50,15 @@ Console.Write("Введите k1: "); double k1 = Convert.ToDouble(Console.ReadL
 Console.Write("Введите b1: "); double b1 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите k2: "); double k2 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите b2: "); double b2 = Convert.ToDouble(Console.ReadLine());
-double x = (b2 - b1) / (k1 - k2);
-double y = k1 * x + b1;
-Console.WriteLine($"Точка пересечения прямых: ({Math.Round(x,2)}; {Math.Round(y,2)})");
+if (k1 == k2 && b1 == b2)
+    Console.WriteLine("Прямые совпадают");
+else if (k1 / k2 == b1 / b2)
+{
+    Console.WriteLine("Прямые не пересекаются");
+}
+else
+{
+    double x = (b2 - b1) / (k1 - k2);
+    double y = k1 * x + b1;
+    Console.WriteLine($"Точка пересечения прямых: ({Math.Round(x, 2)}; {Math.Round(y, 2)})");
+}
