@@ -64,8 +64,8 @@ Console.WriteLine();
 Console.WriteLine("Задача 50");
 int[,] array50 = RandomIntArray2D(3, 4, 0, 10);
 PrintArray2D(array50);
-int arrayRow = Convert.ToInt32(PromptAndInput("номер строки"));
-int arrayColumn = Convert.ToInt32(PromptAndInput("номер столбца"));
+int arrayRow = Convert.ToInt32(PromptAndInput("индекс строки"));
+int arrayColumn = Convert.ToInt32(PromptAndInput("индекс столбца"));
 if (arrayRow <= array50.GetLength(0) && arrayColumn <= array50.GetLength(0))
     Console.WriteLine($"Элемент с индексом [{arrayRow},{arrayColumn}]: {array50[arrayRow, arrayColumn]}");
 else Console.WriteLine($"Нет элемента с индексом [{arrayRow},{arrayColumn}]");
